@@ -131,3 +131,64 @@ javascript 書かれたコードに対してユーザーが反応している
 
 自分で区切って作れるような物
 ミニマムスケールで作成できるがrubyの良さ
+
+Create Read Update Delete
+GET
+POST
+GET = URLで渡す
+POST = URLに見えない形で渡す
+google.com?q=kensaku
+? 以降は、全てGETで渡されるデータ（httpでの通信でのルール(編集済)
+上のURLを分解すると
+まず google.com
+railsでいうと、routes.rbに
+root to: "home#index"　と書いて　HomeControllerで def index を表示する
+---
+? q = kensaku
+これは、パラメータ名 'q' に kensaku というデータを格納してコントローラに渡す
+※ queryのqです
+
+実際のrailsコードっぽく書くと、
+
+def index
+    query = params[:q] # kensaku という文字列が格納されている
+
+    # データベースにアクセスして kensaku に一致するページを返す処理
+
+    # あとはその結果を表示する
+exit
+---
+google.com/?q=kensaku
+
+が、RailsなURLだとこんな感じ
+
+google.com/kensaku
+
+ ===
+
+# routes.rb
+get '/:query', to: 'home#index'
+
+ ===
+
+# HomeController
+def index
+    p params[:query]
+end
+
+# kensaku と表示される
+/edit/:id
+/edit/1(編集済)
+https://www.ruby-lang.org/ja/documentation/
+
+
+
+クラスとは
+クラスの仕組み
+継承の言葉の理解
+アクセス権の理解
+
+acitive recor 
+各データベースの機能を
+分かりやすくする。
+
