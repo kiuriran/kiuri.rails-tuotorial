@@ -32,7 +32,7 @@ rails generate controller hoge
 データに問題があるのか
 データの取得する手段に問題があるのか
 表示がバグで文字化けしてるのか
-問題をより詳しく解明するため
+問題をより詳しく解明す���ため
 MVCが存在する
 
 コントローラーの中に
@@ -191,4 +191,17 @@ https://www.ruby-lang.org/ja/documentation/
 acitive recor 
 各データベースの機能を
 分かりやすくする。
+
+演習を後で聞く
+
+rails c コンソールを開く
+
+User.all.count
+前ユーザー数を表示
+
+User.last
+最後に更新されたユーザーを表示
+
+railsl db:reset
+ユーザーid数もすべて削除する
 
